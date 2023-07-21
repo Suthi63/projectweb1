@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <title>แนะนํา สเปคคอมพิวเตอร์ เเละ โน๊คบุ๊ค</title>
+
+    <link href="assets/css/hover_pack.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/colors/color-74c9be.css" rel="stylesheet">    
+    <link href="assets/css/animations.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <!-- JavaScripts needed at the beginning
+    ================================================== -->
+    <script type="text/javascript" src="http://alvarez.is/demo/marco/assets/js/twitterFetcher_v10_min.js"></script>
+
+    <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+    <script type="text/javascript">
+        // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+    
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 11,
+                
+                scrollwheel: false,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+                // How you would like to style the map. 
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: [	{		featureType:'water',		stylers:[{color:'#74c9be'},{visibility:'on'}]	},{		featureType:'landscape',		stylers:[{color:'#f2f2f2'}]	},{		featureType:'road',		stylers:[{saturation:-100},{lightness:45}]	},{		featureType:'road.highway',		stylers:[{visibility:'simplified'}]	},{		featureType:'road.arterial',		elementType:'labels.icon',		stylers:[{visibility:'off'}]	},{		featureType:'administrative',		elementType:'labels.text.fill',		stylers:[{color:'#444444'}]	},{		featureType:'transit',		stylers:[{visibility:'off'}]	},{		featureType:'poi',		stylers:[{visibility:'off'}]	}]
+            };
+
+            // Get the HTML DOM element that will contain your map 
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+
+            // Create the Google Map using out element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+        }
+		function carousel() {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  
+  			}	
+			myIndex++;
+			if (myIndex > x.length) {myIndex = 1}    
+			x[myIndex-1].style.display = "block";  
+			setTimeout(carousel, 4000);    
+			}
+
+		// Used to toggle the menu on small screens when clicking on the menu button
+		function myFunction() {
+		var x = document.getElementById("navDemo");
+		if (x.className.indexOf("w3-show") == -1) {
+			x.className += " w3-show";
+		} else { 
+			x.className = x.className.replace(" w3-show", "");
+		}
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		var modal = document.getElementById('ticketModal');
+		window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+		}
+    </script>
+    
+    
+    <!-- Main Jquery & Hover Effects. Should load first -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/hover_pack.js"></script>
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+
+	<! ========== HEADERWRAP ==================================================================================================== 
+	=============================================================================================================================>
+    <div class="w3-top">
+		<div class="w3-bar w3-black w3-card">
+		  <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+		  <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+		  <a href="index.html#About" class="w3-bar-item w3-button w3-padding-large w3-hide-small">About Me</a>
+		  <a href="index.html#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">สิ่งที่ต้องรู้เกี่ยวกับคอมพิวเตอร์</a>
+		  
+		  <div class="w3-dropdown-hover w3-hide-small">
+			<button class="w3-padding-large w3-button" title="More">เเนะนําคอมพิวเตอร์ <i class="fa fa-caret-down"></i></button>     
+			<div class="w3-dropdown-content w3-bar-block w3-card-4">
+			  <a href="P1.html" class="w3-bar-item w3-button">คอมพิวเตอร์ทํางานทั่วไป</a>
+			  <a href="P2.html" class="w3-bar-item w3-button">คอมพิวเตอร์เล่นเกม+ตัดต่อ</a>
+			  <a href="P3.html" class="w3-bar-item w3-button">คอมพิวเตอร์สําหรับทํางานกราฟฟิคตัดต่อขั้นสูง</a>
+			</div>
+		  </div>
+		  <div class="w3-dropdown-hover w3-hide-small">
+			<button class="w3-padding-large w3-button" title="More">เเนะนําโน็ตบุ๊ค <i class="fa fa-caret-down"></i></button>     
+			<div class="w3-dropdown-content w3-bar-block w3-card-4">
+			  <a href="P4.html" class="w3-bar-item w3-button">โน็ตบุ๊คทํางานทั่วไป</a>
+			  <a href="P5.html" class="w3-bar-item w3-button">โน็ตบุ๊คเล่นเกม+ตัดต่อ</a>
+			  <a href="P6.html" class="w3-bar-item w3-button">โน็ตบุ๊คสําหรับทํางานกราฟฟิคตัดต่อขั้นสูง</a>
+			</div>
+		  </div>
+		  
+		</div>
+	  </div>
+	  <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+		<a href="index.html#About" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">About Me</a>
+		<a href="index.html#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">สิ่งที่ต้องรู้เกี่ยวกับคอมพิวเตอร์</a>
+		<a href="index.html#computer" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">เเนะนําคอมพิวเตอร์</a>
+		<a href="index.html#notebook" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">เเนะนําโน็ตบุ๊ค</a>
+	  </div>
+	  
+	  
+	<div class = "computer">
+    	<div class="container">
+			<div class="row centered">
+				<div class="col-lg-8 col-lg-offset-2 mt">
+					
+					<h1 class="animation slideDown">สเปคคอมพิวเตอร์ เเละ โน๊คบุ๊ค.</h1>
+					<h2 class="animation slideDown">Computer specs and notebooks.</h2>
+    				
+
+				</div>
+				
+			</div><!-- /row -->
+    	</div><!-- /container -->
+    </div>
+	<center>
+		<p id = "tour"></p>
+		<div class ="Boxmodel" >
+			<div class = "content">
+				<h1>ก่อนจัดสเปคคอมและเลือกโน๊ตบุ๊คต้องรู้อะไรบ้าง</h1><br>
+				<h4 class="textleft">1.CPU เครื่องจะแรงหรือไม่ต้องดู</h4>
+					<p class ="textleft">CPU คือตัวประมวลผลหลักของคอมพิวเตอร์ เรียกได้ว่าคอมพิวเตอร์จะมีความเร็วสูงสุดอยู่ที่ไหน ก็ต้องวัดกันที่สเปคของ CPU นี้แหละ โดยค่าที่สำคัญที่สุดของ CPU ก็คือความเร็วการทำงานของมันที่จะถูกวัดเป็นหน่วยที่เรียกว่า GHz ซึ่งวิธีดู CPU ง่าย ๆ ก็ดูว่า ไอเจ้าค่า GHz ตัวนี้ส่วนไหนมีมากกว่านั่นเอง ยิ่งมีมากก็ยิ่งประมวลผลได้เร็ว ซึ่งค่าความเร็วนี้ส่วนมากผู้ซื้อจะได้รับข้อมูลมาเป็น xx / xx GHz ซึ่งหมายถึงความเร็วทำงานทั่วไปและความเร็วสูงสุดนั่นเอง ซึ่งในปัจจุบัน ค่าย CPU ก็แบ่งออกเป็น 2 ค่ายได้แก่ Intel หรือค่ายฟ้า และ AMD หรือค่ายแดง ซึ่งบังเอิญมีชื่อรุ่นของ CPU ที่ใกล้เคียงกันคือ Intel i3,5,7,9 และ Ryzen 3,5,7,9 ซึ่งถือว่ามีสเปคอยู่ในระดับเดียวกันพอดิบพอดี ฉะนั้นจึงสามารถนำมาอธิบายได้ง่าย ๆ ดังนี้</p>
+					<h5 class="textleft">-Intel i3, Ryzen3</h5>
+					<p class ="textleft">คอร์รุ่นถูกสุด เหมาะกับการใช้งานธรรมดา พิมพ์เอกสาร เปิด Youtube ไม่เหมาะกับการเล่นเกม หรือทำงานกราฟฟิคเลย</p>
+					<h5 class="textleft">-Intel i5, Ryzen5</h5>
+						<p class ="textleft">คอร์ที่ใช้งานทั่วไปในคอมพ์หรือโน้ตบุคสำเร็จรูป เพียงพอต่อการเล่นเกมและการทำงานทั่ว ๆ ไปเช่นตัดต่อภาพอย่างง่าย</p>
+					<h5 class="textleft">-Intel i7, Ryzen7</h5>
+						<p class ="textleft">CPU ระดับกลางไปสูง เล่นเกมได้เกือบทุกเกมบนโลกอย่างลื่นไหล ทำงานกราฟฟิคงานทั่วไปได้สบาย รวมไปถึงงานอนิเมท 3D เล็ก ๆ น้อย ๆ </p>
+					<h5 class="textleft">-Intel i9, Ryzen9</h5>
+						<p class ="textleft">ถือว่า Over Spec สำหรับการเล่นเกมไปมาก เหมาะสำหรับสาย Hardcore ที่อยากเปิดเอฟเฟคแบบโหดจริง ๆ เท่านั้น ส่วนการทำงานใครที่ทำงานกราฟฟิคตัดต่อ ระดับสูง ก็ควรลงทุนกับ CPU ในระดับนี้</p>
+				<img src="assets\img\image1\1-130-728x485.png" style="max-width:70%;height:auto;"><br><br>
+				<h4 class ="textleft">2. RAM เครื่องทำงานลื่นไม่สะดุดต้องดู</h4>
+					<p class ="textleft">เวลาคอมพิวเตอร์เรากำลังทำงานอยู่นั้นเบื้องหลังของมันคือการส่งคำสั่งออกไปต่อคิวรอเพื่อให้ CPU ประมวลผล ซึ่ง RAM หรือหน่วยความจำหลักของคอมพิวเตอร์ นั้นก็จะทำหน้าที่รับข้อมูล จัดคิวและส่งต่อไปให้ CPU ประมวลผล ซึ่งหน่วยความจำที่มากขึ้นก็จะทำให้คุณสามารถใช้งานโปรแกรมต่าง ๆ พร้อมกันได้เยอะหรือรันโปรแกรมที่หนัก ๆ ได้ โดยสเปคของแรมจะแบ่งหลัก ๆ ออกเป็น 2 ส่วนได้แก่</p>
+					<h5 class="textleft">- ขนาดของแรม</h5>
+					<p class ="textleft">พื้นที่ของ RAM ที่สามารถกักคำสั่งหรือชุดข้อมูลเอาไว้ก่อนส่งไปให้ CPU ประเมินผล เป็นส่วนที่ต้องใส่ใจมาก ๆ หากทำงานจำพวกกราฟฟิค ทั้งงานภาพเคลื่อนไหว ภาพนิ่ง หรือ 3D เพราะงานเหล่านี้เน้นการรับส่ง ข้อมูลปริมาณมาก ๆ ทำให้ผู้ใช้งานต้องมีพื้นที่ RAM สำหรับจัดเก็บคำสั่งเอาไว้จำนวนมาก โดย RAM ขั้นต่ำในปัจจุบันก็ไม่ควรต่ำกว่า 8GB แม้ว่าคุณจะไมได้ใช้เล่นเกมหรือทำงานก็ตาม แต่ก็ควรจัดสเปคคอมพิวเตอร์เอาไว้เผื่อการใช้งานในอนาคตด้วย</p>
+					<h5 class="textleft">- แรม Busspeed</h5>
+					<p class ="textleft">Bus ในคอมพิวเตอร์เป็นเส้นทางพูดคุยกันระหว่างฮาร์ดแวร์ต่างๆ ในเครื่อง เปรียบได้กับถนนที่ให้รถวิ่งไปมา โดยเรียกจำนวนรถที่วิ่งไปพร้อมๆ กันใน 1 วินาทีว่าเฮิร์ซ (Hz) และปริมาณรถที่วิ่งพร้อมๆ กันบนบัสมีหน่วยเป็น MHz ยิ่งตัวเลขข้างหน้า MHz มากก็จะยิ่งดี แต่ก็ไม่เสมอไป เพราะขึ้นกับปัจจัยอื่นๆ ด้วยว่ารองรับบัสสูงสุดที่เท่าไร ซึ่งในปัจจุบัน Bus มีอยู่หลายความเร็วให้เลือกใช้ เช่น 2133 MHz / 3200 MHz เป็นต้น</p>
+				<img src= "assets\img\image1\26f900ce-6777-4b70-b508-07598b94919f.jpg"style="max-width:60%;height:auto;"><br><br>
+				<h4 class ="textleft">3.Mainboard </h4>
+					<p class ="textleft">ถือว่าเป็นจุดร่วมของชิปและการใช้งานของเราทั้งหมด เรียกได้ว่าเป็นตัวกำหนดความเร็วความแรงสูงสุดให้กับคอมพิวเตอร์เลยด้วยซ้ำ เพราะเมนบอร์ดนั้นเป็นเหมือนทางเชื่อมของสัญญาณของชิปต่าง ๆ เช่น จาก RAM ไป CPU ฉะนั้นต่อให้ชิปของคุณลื่นขนาดไหน แต่ถ้า Mainboard สามารถส่งสัญญาณได้ช้า คุณก็ต้องไปใช้ความเร็วของ Mainboard อยู่ดี แถมยังรวมไปถึงพอร์ตต่าง ๆ บนตัวเครื่องว่าจะรองรับอะไรได้เท่าไหร่อีกต่างหาก ชิปเซต (Chipset) และซ็อกเกต (Socket) เป็นเรื่องสำคัญที่เราจะต้องรู้ก่อนเป็นอันดับแรก ชิปเซตจะเป็นส่วนที่ซีพียูในสื่อสารกับอุปกรณ์อื่น ๆ ที่อยู่บนเมนบอร์ด ส่วนซ็อกเกตจะเป็นช่องสำหรับใส่ซีพียู </p>
+					<p class="textleft">สำหรับซีพียู Intel ตั้งแต่ Gen 6-7 จะใช้ซ็อกเกต LGA 1151 ส่วน Gen 8-9 จะใช้ LGA 1151 V.2 ซึ่งไม่สามารถใช้งานร่วมกันได้นะครับ ส่วน AMD RYZEN จะเป็นซ็อกเกต AM4 ใช้ด้วยกันได้หมด</p>
+					<img src="assets\img\image1\2-3-600x600.png" style="max-width:50%;height:auto;"><br><br>
+				<h4 class ="textleft">4.Hard disk</h4>
+				<p class="textleft">ในบัจจุบัน Hard disk หรือหน่วยความจําหลักของระบบคอมพิวเตอร์ จะมีด้วยกัน ประเภท คือ SSD เเละ HDD หลักๆเเนะนําให้ใช้SSD</p>
+				<p class="textleft"> -SSD<br>
+					ใช้ชิปจัดเก็บข้อมูล การทำงานเหมือน Thumb drive หรือ Flash drive
+					ส่งข้อมูลได้รวดเร็ว เพราะไม่มีข้อจำกัดของรอบดิสก์แบบ HDD
+					เสียหายยาก ตกพื้นก็ทนได้ไม่มีปัญหา
+					การบันทึกรูปแบบนี้ทำให้ไดร์ฟเสื่อมสภาพเร็วกว่า โดยมีอายุการใช้งาน 5-6 ปีโดยประมาณ
+					กินไฟน้อยกว่า</p>
+				<p class="textleft">-HDD <br>ใช้จานหมุนดิสก์แม่เหล็กเพื่อบันทึกข้อมูล
+					ความเร็วการรับส่งข้อมูลช้ากว่า SSD
+					ไม่เหมาะกับการพกพาเคลื่อนที่เพราะมีโอกาสที่ดิสก์จะแตกหัก ไม่ทนต่อการตกกระแทก
+					เสถียร ทนทาน ไม่สึกหรอจากการใช้งานซ้ำ อายุการใช้งาน 10 – 15 ปี
+					กินไฟมากกว่า</p>
+					<img src="assets\img\image1\SSD-vs-HDD.jpg" style="max-width:50%;height:auto;"><br><br>
+				<h4 class ="textleft">5.การ์ดจอ</h4>
+				<p class="textleft">การ์ดจอ (GPU) คือประตูบานสุดท้ายของเครื่องคอมพิวเตอร์ที่จะทำการแสดงผลสิ่งที่ CPU ประมวลออกมาได้ให้กับผู้ใช้งานด้วยภาพ โดยปกติแล้วก็จะมีแถมมาให้กับ CPU บางตัว แต่นั่นก็สามารถใช้งานเพื่อแสดงผลหน้าจอต่าง ๆ ได้เท่านั้น แต่สำหรับงานภาพเคลื่อนไหว หรืองานที่มีสีสันมากขึ้น และมีขนาดไฟล์ที่ใหญ่ขึ้น แน่นอนว่าคุณก็ต้องการการ์ดจอที่ดีขึ้นด้วยในการจัดสเปคคอม ภายใน GPU ประกอบไปด้วยชิปประมวลที่ลักษณะคล้าย CPU เล็ก ๆ อีกหลายพันตัวเพื่อใช้ในการประมวลผล Pixel ต่าง ๆ ละในบางรุ่นก็จะมี RAM ในตัวเอง ช่วยในการประมวลผลที่ลื่นไหลด้วย</p>
+				<img src="assets\img\image1\579976-amd-radeon-6800xt-option-1260x709-1.jpg"style="max-width:60%;height:auto;"><br><br>
+
+
+
+
+			</div>
+		</div>
+	</center>
+	<! ========== BLOG POSTS ==================================================================================================== 
+	=============================================================================================================================>
+	<p id ="computer"></p>    
+	<div class="container">	
+
+		<div class="row mt centered ">
+			<div class="col-lg-4 col-lg-offset-4">
+				<h3>สเปคคอมพิวเตอร์</h3>
+				<hr-d>
+			</div>
+		</div><!-- /row -->
+
+		<div class="row mt">
+			<div class="col-lg-4 col-md-4 col-xs-12 desc">
+				<a class="b-link-fade b-animate-go" href="P1.html"><img width="350" src="assets\img\รูปสเปคคอมพิวเตอร์\รวมอาชีพเกี่ยวกับคอมพิวเตอร์-มีคอมเครื่องเดียวก็หาเงินได้-1.jpeg"alt="" />
+					<div class="b-wrapper">
+					  	<h4 class="b-from-left b-animate b-delay03">ดูเพิ่มเติม</h4>
+					  	<p class="b-from-right b-animate b-delay03">Read More.</p>
+					</div>
+				</a>
+				<p>สเปคคอมพิวเตอร์ ทํางานเบาๆ ดูหนังฟังเพลง</p>
+				<p class="lead">คลิกที่รูปเพื่อดูเพิ่มเติม</p>
+				<hr-d>
+				<p class="time"><i class="fa fa-comment-o"></i> 3 | <i class="fa fa-calendar"></i> 14 Nov.</p>
+			</div><!-- col-lg-4 -->
+			
+			<div class="col-lg-4 col-md-4 col-xs-12 desc">
+				<a class="b-link-fade b-animate-go" href="P2.html"><img width="350" src="assets\img\รูปสเปคคอมพิวเตอร์\คอมไม่เกิน-15000.jpg" alt="" />
+					<div class="b-wrapper">
+					  	<h4 class="b-from-left b-animate b-delay03">ดูเพิ่มเติม</h4>
+					  	<p class="b-from-right b-animate b-delay03">Read More.</p>
+					</div>
+				</a>
+				<p>สเปคคอมพิวเตอร์เล่นเกม </p>
+				<p class="lead">คลิกที่รูปเพื่อดูเพิ่มเติม</p>
+				<hr-d>
+				<p class="time"><i class="fa fa-comment-o"></i> 1 | <i class="fa fa-calendar"></i> 13 Oct.</p>
+			</div><!-- col-lg-4 -->
+			
+			<div class="col-lg-4 col-md-4 col-xs-12 desc">
+				<a class="b-link-fade b-animate-go" href="P3.html"><img width="350" src="assets\img\รูปสเปคคอมพิวเตอร์\สเปคคอมงานกราฟฟิค-2021-ย่อ-scaled.webp"alt="" />
+					<div class="b-wrapper">
+					  	<h4 class="b-from-left b-animate b-delay03">ดูเพิ่มเติม</h4>
+					  	<p class="b-from-right b-animate b-delay03">Read More.</p>
+					</div>
+				</a>
+				<p>สเปคคอมพิวเตอร์ทํางานหนักๆ งานกราฟฟิคตัดต่อ ระดับสูง</p>
+				<p class="lead">คลิกทีรูปเพื่อดูเพิ่มเติม</p>
+				<hr-d>
+				<p class="time"><i class="fa fa-comment-o"></i> 1 | <i class="fa fa-calendar"></i> 13 Oct.</p>
+			</div><!-- col-lg-4 -->
+			
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+	<! ========== CALL TO ACTION 1 ============================================================================================== 
+	=============================================================================================================================>
+	<div class="row mt centered ">
+		<div class="col-lg-4 col-lg-offset-4">
+			<h3></h3>
+			
+		</div>
+	</div><!-- /row -->
+    
+
+	<! ========== PORTFOLIO SECTION ============================================================================================= 
+	=============================================================================================================================>    
+	<div class="container">
+		<div class="row mt centered ">
+			<div class="col-lg-4 col-lg-offset-4">
+				<h3>เเนะนําโน็ตบุ๊ค</h3>
+				
+				
+				<hr-d>
+			</div>
+		</div><!-- /row -->
+		<div class="row mt centered">	
+			<div class="col-lg-4 desc">
+				<a class="b-link-fade b-animate-go" href="P4.html"><img width="350" src="assets\img\เเนะนําโน็ตบุ๊ค\Matebook D 15-Space Grey-c.jpg"alt="" />
+					<div class="b-wrapper">
+						<h4 class="b-from-left b-animate b-delay03">ดูเพิ่มเติม</h4>
+						<p class="b-from-right b-animate b-delay03">Read More.</p>
+					</div>
+				</a>
+				<p>โน็ตบุ๊คทํางานออฟฟิต ดูหนังฟังเพลง</p>
+				<p class="lead">คลิกทีรูปเพื่อดูเพิ่มเติม</p>
+				<hr-d>
+			</div>
+			<div class="col-lg-4 desc">
+				<a class="b-link-fade b-animate-go" href="P5.html"><img width="350" src="assets\img\เเนะนําโน็ตบุ๊ค\1e8b0907-rog-6a64f420-1024x733.jpg" alt="" />
+					<div class="b-wrapper">
+						<h4 class="b-from-left b-animate b-delay03">ดูเพิ่มเติม</h4>
+						<p class="b-from-right b-animate b-delay03">Read More.</p>
+					</div>
+				</a>
+				<p>โน็ตบุ๊คเกมมิ่ง </p>
+				<p class="lead">คลิกทีรูปเพื่อดูเพิ่มเติม</p>
+				<hr-d>	
+			</div>
+			
+			<div class="col-lg-4 desc">
+				<a class="b-link-fade b-animate-go" href="P6.html"><img width="350" src="assets\img\เเนะนําโน็ตบุ๊ค\gy4h0j.jpg"alt="" />
+					<div class="b-wrapper">
+					  	<h4 class="b-from-left b-animate b-delay03">ดูเพิ่มเติม</h4>
+					  	<p class="b-from-right b-animate b-delay03">Read More.</p>
+						
+
+						  
+					</div>
+				</a>
+				<p>โน๊คบุ๊คตัดต่อกราฟฟิคทํางานระดับสูง</p>
+				<p class="lead">คลิกทีรูปเพื่อดูเพิ่มเติม</p>
+				<hr-d>
+			</div>
+		</div><!-- /row -->
+		
+
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /grey -->
+
+	
+	<! ========== BLACK SECTION ================================================================================================= 
+	=============================================================================================================================>
+	<p id="About"></p>    
+	<div id="black">
+		<div class="container">
+			<div class="row mt centered">
+				<div class="col-lg-4 col-lg-offset-4">
+					<h3 id = "About1">Abot me</h3>
+					<img src="assets\img\portfolio\33809.jpg" style="max-width:50%;height:auto;"><br>
+					<hr>
+				</div><!-- /col-lg-4 -->
+			</div><!-- /row -->
+			
+			<div class="row mt">
+				<div class="col-lg-8 col-lg-offset-2">
+					
+					<p>Suthiwat Phumee <br>ชื่อ นาย สุธิวัท ภูมี<br>คณะวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์ ชั้นปีที่ 3<br> มหาวิทยาลัยนเรศวร</p>
+
+				</div><! --/col-lg-8 -->
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /black -->
+	<br><br><br>
+
+
+	<! ========== FEATURED ICONS ================================================================================================ 
+	=============================================================================================================================>    
+    
+
+	<! ========== CALL TO ACTION 2 ============================================================================================== 
+	=============================================================================================================================>    
+    
+
+	<! ========== FEATURED ICONS ================================================================================================ 
+	=============================================================================================================================>    
+    
+	<! ========== FOOTER ======================================================================================================== 
+	=============================================================================================================================>    
+	
+	<div id="f">
+		<div class="container">
+			<div class="row">
+				<!-- ADDRESS -->
+				<div class="col-lg-3">
+					<h4>- Reference Footage <br>แหล่งอ้างอิง</h4>
+					<p>
+						<a href ="https://www.mercular.com/review-article/how-to-choose-pc-notebook-spec">- https://www.mercular.com/</a>
+						<br>
+						<a href ="https://www.advice.co.th/">- advice</a>
+						<br>
+						<a href="https://notebookspec.com/web/642649-nbs-pc-spec-2022-5-min">- notebookspec</a>
+					</p>
+					
+				</div><! --/col-lg-3 -->
+				
+				<!-- TWEETS -->
+				<div class="col-lg-3">
+					<h4> - make by Suthiwat <br>จัดทําโดย นาย สุธิวัท ภูมี</h4>
+					
+					<div id="showtweets"></div>
+						<script>
+							twitterFetcher.fetch('258157205101088768', 'showtweets', 2, true, false, false, '', false, handleTweets, false);
+							
+							function handleTweets(tweets){
+							    var x = tweets.length;
+							    var n = 0;
+							    var element = document.getElementById('showtweets');
+							    var html = '<ul>';
+							    while(n < x) {
+							      html += '<li>' + tweets[n] + '</li>';
+							      n++;
+							    }
+							    html += '</ul>';
+							    element.innerHTML = html;
+							}					
+						</script>
+					
+				</div><!-- /col-lg-3 -->
+				
+				<!-- LATEST POSTS -->
+				<div class="col-lg-3">
+					<h4>-เกี่ยวกับเว็บไซต์</h4>
+					<p>
+						เว็บไซต์นี้จัดทําเพื่อให้ความรู้เเละเป็นส่วนหนึ่งของรายวิชา
+					</p>
+				</div><!-- /col-lg-3 -->
+				
+				<!-- NEW PROJECT -->
+				<div class="col-lg-3">
+					<h4><a id = About href="#About">- About Me</a></h4>
+					
+				</div><!-- /col-lg-3 -->
+				
+				
+			</div><! --/row -->
+		</div><!-- /container -->
+	</div><!-- /f -->
+	
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/retina.js"></script>
+
+
+  	<script>
+		$(window).scroll(function() {
+			$('.si').each(function(){
+			var imagePos = $(this).offset().top;
+	
+			var topOfWindow = $(window).scrollTop();
+				if (imagePos < topOfWindow+400) {
+					$(this).addClass("slideUp");
+				}
+			});
+		});
+	</script>    
+
+
+
+  
+  </body>
+</html>

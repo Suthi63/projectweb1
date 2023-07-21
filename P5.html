@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <title>MARCO - One Page Bootstrap 3 Theme</title>
+
+    <link href="assets/css/hover_pack.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/colors/color-74c9be.css" rel="stylesheet">    
+    <link href="assets/css/animations.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <!-- JavaScripts needed at the beginning
+    ================================================== -->
+    <script type="text/javascript" src="http://alvarez.is/demo/marco/assets/js/twitterFetcher_v10_min.js"></script>
+
+    <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+    <script type="text/javascript">
+        // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+    
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 11,
+                
+                scrollwheel: false,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+                // How you would like to style the map. 
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: [	{		featureType:'water',		stylers:[{color:'#74c9be'},{visibility:'on'}]	},{		featureType:'landscape',		stylers:[{color:'#f2f2f2'}]	},{		featureType:'road',		stylers:[{saturation:-100},{lightness:45}]	},{		featureType:'road.highway',		stylers:[{visibility:'simplified'}]	},{		featureType:'road.arterial',		elementType:'labels.icon',		stylers:[{visibility:'off'}]	},{		featureType:'administrative',		elementType:'labels.text.fill',		stylers:[{color:'#444444'}]	},{		featureType:'transit',		stylers:[{visibility:'off'}]	},{		featureType:'poi',		stylers:[{visibility:'off'}]	}]
+            };
+
+            // Get the HTML DOM element that will contain your map 
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+
+            // Create the Google Map using out element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+        }
+		function carousel() {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  
+  			}	
+			myIndex++;
+			if (myIndex > x.length) {myIndex = 1}    
+			x[myIndex-1].style.display = "block";  
+			setTimeout(carousel, 4000);    
+			}
+
+		// Used to toggle the menu on small screens when clicking on the menu button
+		function myFunction() {
+		var x = document.getElementById("navDemo");
+		if (x.className.indexOf("w3-show") == -1) {
+			x.className += " w3-show";
+		} else { 
+			x.className = x.className.replace(" w3-show", "");
+		}
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		var modal = document.getElementById('ticketModal');
+		window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+		}
+    </script>
+    
+    
+    <!-- Main Jquery & Hover Effects. Should load first -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/hover_pack.js"></script>
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+
+	<! ========== HEADERWRAP ==================================================================================================== 
+	=============================================================================================================================>
+    <div class="w3-top">
+		<div class="w3-bar w3-black w3-card">
+		  <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+		  <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+		  <a href="index.html#About" class="w3-bar-item w3-button w3-padding-large w3-hide-small">About Me</a>
+		  <a href="index.html#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">สิ่งที่ต้องรู้เกี่ยวกับคอมพิวเตอร์</a>
+		  
+		  <div class="w3-dropdown-hover w3-hide-small">
+			<button class="w3-padding-large w3-button" title="More">เเนะนําคอมพิวเตอร์ <i class="fa fa-caret-down"></i></button>     
+			<div class="w3-dropdown-content w3-bar-block w3-card-4">
+			  <a href="P1.html" class="w3-bar-item w3-button">คอมพิวเตอร์ทํางานทั่วไป</a>
+			  <a href="P2.html" class="w3-bar-item w3-button">คอมพิวเตอร์เล่นเกม+ตัดต่อ</a>
+			  <a href="P3.html" class="w3-bar-item w3-button">คอมพิวเตอร์สําหรับทํางานกราฟฟิคตัดต่อขั้นสูง</a>
+			</div>
+		  </div>
+		  <div class="w3-dropdown-hover w3-hide-small">
+			<button class="w3-padding-large w3-button" title="More">เเนะนําโน็ตบุ๊ค <i class="fa fa-caret-down"></i></button>     
+			<div class="w3-dropdown-content w3-bar-block w3-card-4">
+			  <a href="P4.html" class="w3-bar-item w3-button">โน็ตบุ๊คทํางานทั่วไป</a>
+			  <a href="P5.html" class="w3-bar-item w3-button">โน็ตบุ๊คเล่นเกม+ตัดต่อ</a>
+			  <a href="P6.html" class="w3-bar-item w3-button">โน็ตบุ๊คสําหรับทํางานกราฟฟิคตัดต่อขั้นสูง</a>
+			</div>
+		  </div>
+		  
+		</div>
+	  </div>
+	  <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+		<a href="index.html#About" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">About Me</a>
+		<a href="index.html#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">สิ่งที่ต้องรู้เกี่ยวกับคอมพิวเตอร์</a>
+		<a href="index.html#computer" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">เเนะนําคอมพิวเตอร์</a>
+		<a href="index.html#notebook" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">เเนะนําโน็ตบุ๊ค</a>
+	  </div>
+    <div id="black">
+		<div class="container">
+			<div class="row mt centered">
+				<div class="col-lg-4 col-lg-offset-4">
+					<h3> 5 อันดับที่เเนะนําสําหรับโน็ตบุ๊คเกมมิ่ง </h3>
+                    
+					<hr>
+				</div><!-- /col-lg-4 -->
+			</div><!-- /row -->
+			
+			<div class="row mt">
+				<div class="col-lg-8 col-lg-offset-2">
+					<p>ปัจจุบันโน๊ตบุ๊คเล่นเกมมีให้เลือกหลายรุ่นหลายยี่ห้อส่วนการจะเลือกซื้อก็ให้เริ่มดูจาก CPU ที่ปัจจุบันนี้ก็ควรเป็น Intel i5-10300H และ RYZEN5 4600H ขึ้นไปไม่ควรเลือก CPU ที่เป็นรหัส U เพราะเป็นรุ่นประหยัดไฟ ต่อมาให้ดูที่การ์ดจอ หากเล่นเฉพาะเกมออนไลน์ GTX 1650 หรือ RX 5500M ก็เพียงต่อการใช้งานแต่หากเล่นเกมที่เน้นกราฟฟิคสวยๆควรเลือกเป็ GTX 1660 Ti ขึ้นไป Ram สำหรับสายเกมมิ่งยุคนี้ต้อง 8GB-16GB เพราะเกมในปัจจุบันกินแรมเยอะขึ้น ฮาร์ดดิสสำหรับเก็บข้อมูลควรมีมาให้ 1TB และเสริมด้วย SSD 120-240GB เลือกรุ่นที่มีวินโดว์แท้มากับเครื่องเลยก็ช่วยประหยัดค่าใช้จ่ายไปได้เยอะ ขนาดหน้าจอให้เลือกตามที่ชอบได้เลยและให้ดูระบบระบายความร้อนด้วยว่ามีกี่พัดลมระบายความร้อนดีไหมโดยสเปคที่เราแนะนำไปนั้นก็แรงพอที่จะเล่นได้ทุกเกม
+                        โน๊ตบุ๊คเกมมิ่งในปัจจุบันมีตัวเลือกหลากหลายตัวทั้งตัวที่เป็นตระกูล AMD ที่ใส่มาทั้ง Ryzen 7 กับการ์ดจอ RX5500M ทำให้การใช้งานเป็นไปอย่างลื่นไหลไม่ติดขัดและมีราคาที่ไม่แพงสามารถปรับสุดได้ทุกเกมในระดับ FullHD หรือใครหากต้องการความแรงแบบจัดเต็มที่ทำให้สามารถเล่นเกมปรับสุดในระดับ 4k ได้ก็ให้มองหาเป็นโน๊ตบุ๊คเกมมิ่งที่มาพร้อม CPU Intel i7 Gen10 กับการ์ดจออย่าง RTX2070 เรารับรองเลยว่าท่านจะได้พบกับความเต็มอิ่มในการเล่นเกม และสำหรับเกมเมอร์ที่เลือกสเปคแรงๆแล้วหน้าจอก็ต้องมีรีเฟรชเรทที่ 120-144hz เพื่อความลื่นไหลของภาพอีกด้วย หากใครที่กำลังจะเริ่มต้นแคสเกมตัวซีพียูอย่าง Ryzen 7 และ Core i7 ก็สามารถทำได้</p>
+				</div><! --/col-lg-8 -->
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /black -->
+	<center>
+		<div class ="Boxmodel" >
+			<div class = "content">
+				
+				<h4 class="textleft">1.Notebook Acer Nitro AN515-45-R2MT/T008 (Shale Black)</h4>
+                    <p class ="textleft"><b>ราคา : 25,350</b></p>
+                    <p class ="textleft"><b>หากสนใจ </b><a class = "taga" href="https://www.advice.co.th/product/notebook-gaming/notebook-gaming-acer/notebook-acer-nitro-an515-45-r2mt-t008-shale-black-"> คลิก</a></p>
+                    <p class ="textleft"><b>หน้าจอ : แสดงผลขนาด 15.6" ระดับ FHD 144Hz </b></p>
+					<p class ="textleft"><b>CPU :AMD Ryzen 5 5600H (3.3GHz up to 4.2GHz, 3MB L2 Cache / 16MB L3 Cache)</b></p>
+                    <p class ="textleft"><b>GPU :NVIDIA GeForce RTX 3050 (4GB GDDR6)</b> </p>
+                    <p class ="textleft"><b>Memory :8GB (8GB x1) DDR4</b></p>
+                    <p class ="textleft"><b>Hard Disk Drive :512GB PCIe NVMe M.2 SSD</b></p>
+                    <img src="https://img.advice.co.th/images_nas/pic_product4/A0142556/A0142556_2.jpg" style="max-width:50%;height:auto;"><br>
+                    <br>
+            </div>
+        </div>
+        <div class ="Boxmodel" >
+			<div class = "content">
+				
+				<h4 class="textleft">2.Notebook Lenovo Gaming 3 15IAH7 82S9008UTA (Glacier White)</h4>
+                    <p class ="textleft"><b>ราคา :  36,900</b></p>
+                    <p class ="textleft"><b>หากสนใจ </b><a class = "taga" href="https://www.advice.co.th/product/notebook-gaming/notebook-gaming-lenovo/notebook-lenovo-gaming-3-15iah7-82s9008uta-glacier-white-"> คลิก</a></p>
+                    <p class ="textleft"><b>หน้าจอ : แสดงผลขนาด 15.6" ระดับ FHD IPS 165Hz</b></p>
+					<p class ="textleft"><b>CPU :Intel Core i5-12500H (3.3GHz up to 4.5GHz, 18MB Intel Smart Cache)</b></p>
+                    <p class ="textleft"><b>GPU :NVIDIA GeForce RTX 3050 Ti (4GB GDDR6)</b></p>
+                    <p class ="textleft"><b>Memory :8GB DDR4 3200MHz</b></p>
+                    <p class ="textleft"><b>Hard Disk Drive :512GB PCIe NVMe M.2 SSD</b></p>
+                    <img src="https://img.advice.co.th/images_nas/pic_product4/A0144692/A0144692_2.jpg" style="max-width:50%;height:auto;"><br>
+                    <br>
+            </div>
+        </div>
+        
+        <div class ="Boxmodel" >
+			<div class = "content">
+				
+				<h4 class="textleft">3.Notebook Lenovo V15 G2 ALC 82KDA00MTA (Black)</h4>
+                    <p class ="textleft"><b>ราคา : 16,900</b></p>
+                    <p class ="textleft"><b>หากสนใจ </b><a class = "taga" href="https://www.advice.co.th/product/notebook/notebook-lenovo/notebook-lenovo-v15-g2-alc-82kda00mta-black-"> คลิก</a></p>
+                    <p class ="textleft"><b>หน้าจอ : แสดงผลขนาด 15.6" ระดับ FHD </b></p>
+					<p class ="textleft"><b>AMD Ryzen 5 5500U (2.1GHz up to 4.0GHz, 3MB L2 Cache, 8MB L3 Cache)</b></p>
+                    <p class ="textleft"><b>GPU : AMD Radeon Graphics </b></p>
+                    <p class ="textleft"><b>Memory : 8GB DDR4 3200MHz Onboard memory</b></p>
+                    <p class ="textleft"><b>Hard Disk Drive : 512GB PCIe NVMe M.2 2242 SSD</b></p>
+                    <img src="https://img.advice.co.th/images_nas/pic_product4/A0145398/A0145398_2.jpg" style="max-width:10%;height:auto;"><br>
+                    <br>
+            </div>
+        </div>
+        <div class ="Boxmodel" >
+			<div class = "content">
+				
+				<h4 class="textleft">4.Notebook MSI Sword 15 A12UD-039TH (White))</h4>
+                    <p class ="textleft"><b>ราคา : 38,900</b></p>
+                    <p class ="textleft"><b>หากสนใจ </b><a class = "taga" href="https://www.advice.co.th/product/notebook-gaming/notebook-gaming-msi/notebook-msi-sword-15-a12udth-white-"> คลิก</a></p>
+                    <p class ="textleft"><b>หน้าจอ : แสดงผลขนาด 15.6" ระดับ FHD IPS 144</b></p>
+					<p class ="textleft"><b>CPU :Intel Core i7-12700H (3.5GHz up to 4.7GHz, 24MB Intel Smart Cache)</b></p>
+                    <p class ="textleft"><b>GPU :NVIDIA GeForce RTX 3050 Ti (4GB GDDR6)</b></p>
+                    <p class ="textleft"><b>Memory :16GB (8GB x2) DDR4 3200MHz</b></p>
+                    <p class ="textleft"><b>Hard Disk Drive :512GB PCIe NVMe M.2 SSD</b></p>
+                    <img src="https://img.advice.co.th/images_nas/pic_product4/A0142869/A0142869_2.jpg" style="max-width:50%;height:auto;"><br>
+                    <br>
+            </div>
+        </div>
+        <div class ="Boxmodel" >
+			<div class = "content">
+				
+				<h4 class="textleft">5.Notebook HP Victus Gaming 16-e0231AX (Mica Silver)</h4>
+                    <p class ="textleft"><b>ราคา : 30,990</b></p>
+                    <p class ="textleft"><b>หากสนใจ </b><a class = "taga" href="https://www.advice.co.th/product/notebook-gaming/notebook-gaming-hp/notebook-hp-victus-gaming-16-e0231ax-mica-silver-"> คลิก</a></p>
+                    <p class ="textleft"><b>หน้าจอ : แสดงผลขนาด 16.1" ระดับ FHD IPS 144Hz </b></p>
+					<p class ="textleft"><b>CPU :AMD Ryzen 7 5800H (3.2GHz up to 4.4GHz, 4MB L2 Cache / 16MB L3 Cache)</b></p>
+                    <p class ="textleft"><b>GPU :NVIDIA GeForce RTX 3050 Ti 4GB GDDR6</b></p>
+                    <p class ="textleft"><b>Memory :8GB (8GB x1) DDR4 3200MHz</b></p>
+                    <p class ="textleft"><b>Hard Disk Drive :512GB PCIe NVMe M.2 SSD SSD</b></p>
+                    <img src="https://img.advice.co.th/images_nas/pic_product4/A0142149/A0142149_2.jpg" style="max-width:50%;height:auto;"><br>
+                    <br>
+            </div>
+        </div>
+                           
+	</center>
+	<! ========== BLOG POSTS ==================================================================================================== 
+	=============================================================================================================================>    
+	
+  
+  </body>
+</html>

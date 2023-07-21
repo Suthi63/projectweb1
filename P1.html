@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <title>MARCO - One Page Bootstrap 3 Theme</title>
+
+    <link href="assets/css/hover_pack.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/colors/color-74c9be.css" rel="stylesheet">    
+    <link href="assets/css/animations.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <!-- JavaScripts needed at the beginning
+    ================================================== -->
+    <script type="text/javascript" src="http://alvarez.is/demo/marco/assets/js/twitterFetcher_v10_min.js"></script>
+
+    <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+    <script type="text/javascript">
+        // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+    
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 11,
+                
+                scrollwheel: false,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+                // How you would like to style the map. 
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: [	{		featureType:'water',		stylers:[{color:'#74c9be'},{visibility:'on'}]	},{		featureType:'landscape',		stylers:[{color:'#f2f2f2'}]	},{		featureType:'road',		stylers:[{saturation:-100},{lightness:45}]	},{		featureType:'road.highway',		stylers:[{visibility:'simplified'}]	},{		featureType:'road.arterial',		elementType:'labels.icon',		stylers:[{visibility:'off'}]	},{		featureType:'administrative',		elementType:'labels.text.fill',		stylers:[{color:'#444444'}]	},{		featureType:'transit',		stylers:[{visibility:'off'}]	},{		featureType:'poi',		stylers:[{visibility:'off'}]	}]
+            };
+
+            // Get the HTML DOM element that will contain your map 
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+
+            // Create the Google Map using out element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+        }
+		function carousel() {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  
+  			}	
+			myIndex++;
+			if (myIndex > x.length) {myIndex = 1}    
+			x[myIndex-1].style.display = "block";  
+			setTimeout(carousel, 4000);    
+			}
+
+		// Used to toggle the menu on small screens when clicking on the menu button
+		function myFunction() {
+		var x = document.getElementById("navDemo");
+		if (x.className.indexOf("w3-show") == -1) {
+			x.className += " w3-show";
+		} else { 
+			x.className = x.className.replace(" w3-show", "");
+		}
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		var modal = document.getElementById('ticketModal');
+		window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+		}
+    </script>
+    
+    
+    <!-- Main Jquery & Hover Effects. Should load first -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/hover_pack.js"></script>
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+
+	<! ========== HEADERWRAP ==================================================================================================== 
+	=============================================================================================================================>
+    <div class="w3-top">
+		<div class="w3-bar w3-black w3-card">
+		  <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+		  <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+		  <a href="index.html#About" class="w3-bar-item w3-button w3-padding-large w3-hide-small">About Me</a>
+		  <a href="index.html#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">สิ่งที่ต้องรู้เกี่ยวกับคอมพิวเตอร์</a>
+		  
+		  <div class="w3-dropdown-hover w3-hide-small">
+			<button class="w3-padding-large w3-button" title="More">เเนะนําคอมพิวเตอร์ <i class="fa fa-caret-down"></i></button>     
+			<div class="w3-dropdown-content w3-bar-block w3-card-4">
+			  <a href="P1.html" class="w3-bar-item w3-button">คอมพิวเตอร์ทํางานทั่วไป</a>
+			  <a href="P2.html" class="w3-bar-item w3-button">คอมพิวเตอร์เล่นเกม+ตัดต่อ</a>
+			  <a href="P3.html" class="w3-bar-item w3-button">คอมพิวเตอร์สําหรับทํางานกราฟฟิคตัดต่อขั้นสูง</a>
+			</div>
+		  </div>
+		  <div class="w3-dropdown-hover w3-hide-small">
+			<button class="w3-padding-large w3-button" title="More">เเนะนําโน็ตบุ๊ค <i class="fa fa-caret-down"></i></button>     
+			<div class="w3-dropdown-content w3-bar-block w3-card-4">
+			  <a href="P4.html" class="w3-bar-item w3-button">โน็ตบุ๊คทํางานทั่วไป</a>
+			  <a href="P5.html" class="w3-bar-item w3-button">โน็ตบุ๊คเล่นเกม+ตัดต่อ</a>
+			  <a href="P6.html" class="w3-bar-item w3-button">โน็ตบุ๊คสําหรับทํางานกราฟฟิคตัดต่อขั้นสูง</a>
+			</div>
+		  </div>
+		  
+		</div>
+	  </div>
+	  <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+		<a href="index.html#About" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">About Me</a>
+		<a href="index.html#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">สิ่งที่ต้องรู้เกี่ยวกับคอมพิวเตอร์</a>
+		<a href="index.html#computer" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">เเนะนําคอมพิวเตอร์</a>
+		<a href="index.html#notebook" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">เเนะนําโน็ตบุ๊ค</a>
+	  </div>
+    <div id="black">
+		<div class="container">
+			<div class="row mt centered">
+				<div class="col-lg-4 col-lg-offset-4">
+					<h3>5 อันดับที่เเนะนําสําหรับ คอมพิวเตอร์สายทํางานออฟฟิต</h3>
+                    
+					<hr>
+				</div><!-- /col-lg-4 -->
+			</div><!-- /row -->
+			
+			<div class="row mt">
+				<div class="col-lg-8 col-lg-offset-2">
+					<p>คอมพิวเตอร์ตั้งโต๊ะที่ออกแบบมาเพื่อใช้งานทั่วไป ตัวเคสดีไซน์สวยดูเรียบง่ายสามารถวางไว้ตรงไหนก็ได้ มีราคาไม่แพงใช้งานพื้นฐานเป็นหลักโดยไม่ต้องซื้อคอนประกอบหรือโน๊ตบุ๊ค สามารถเล่นเกมออนไลน์ได้รองรับโปรแกรมพื้นฐานทั่วไปหรือพิมพ์งานก็สามารถทำงานได้ลื่นไหล พอร์ตเชื่อมต่อจากตัวเคสมีให้ครบครันเหลือเพียงซื้อจอมอนิเตอร์เมาส์คีย์บอร์ดมาต่อเพิ่มก็พร้อมใช้งานได้ทันที มีให้เลือกหลากหลายรุ่นจากเหล่าแบรนด์ชั้นนำอาทิ Acer, Lenovo, Dell, HP และ Asus สเปคเริ่มต้นส่วนใหญ่ให้มาแค่พอใช้งานทั่วไปซีพียูจะเป็น Intel Core i3-9100 แรม 4GB และฮาร์ดดิสความจุ 1TB พร้อมด้วย วินโดวส์10แท้จากโรงงาน ในบางรุ่นอาจมาพร้อมการ์ดจอแยกและ SSD ที่ทำให้พอสำหรับการเล่นเกมแต่ก็ไม่แนะนำให้เอามาเล่นเกมอยู่ดี โดยใครอยากทำงานแบบลื่นไหลจริงๆก็ควรเลือกคอมพิวเตอร์ตั้งโต๊ะที่สเปคดีกว่าตัวเริ่มต้นอย่าง CPU Intel Core i3-10100 ที่เป็นซีพียูตัวใหม่กับแรมขนาด 8GB และใช้หน่วยความจำเป็น SSD จะได้เปิดโปรแกรมได้อย่างลื่นไหลและสามารถทำงานได้อย่างไม่มีสะดุด</p>
+				</div><! --/col-lg-8 -->
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /black -->
+	<center>
+        
+		<div class ="Boxmodel" >
+			<div class = "content">
+				
+				<h4 class="textleft">1.Acer Aspire TC-390-R38G1T00Mi/T004</h4>
+                    <p class ="textleft"><b>ราคา : 17,400</b></p>
+                    <p class ="textleft"><b>หากสนใจ </b><a class = "taga" href=https://www.advice.co.th/product/desktop-pc/desktop-pc-acer/desktop-acer-aspire-tc-1760-1214g0t0mi-t007> คลิก</a></p>
+                    
+					<p class ="textleft"><b>CPU :Intel Core i3-12100 3.3/4.3GHz</b></p>
+                    <p class ="textleft"><b>GPU : Intel UHD Graphics 730</b></p>
+                    <p class ="textleft"><b>Memory :4GB DDR4 UDIMM 3200MHz</b></p>
+                    <p class ="textleft"><b>Hard Disk Drive :256GB PCIe NVMe M.2 SSD</b></p>
+                    <img src=https://img.advice.co.th/images_nas/pic_product4/A0145526/A0145526OK_BIG_1.jpg style="max-width:50%;height:auto;"><br>
+                    <br>
+            </div>
+        </div>
+        <div class ="Boxmodel" >
+			<div class = "content">
+				
+				<h4 class="textleft">2.Desktop Asus S500SC-310105055W</h4>
+                    <p class ="textleft"><b>ราคา : 14,990</b></p>
+                    <p class ="textleft"><b>หากสนใจ </b><a class = "taga" href="https://www.advice.co.th/product/desktop-pc/desktop-pc-asus/desktop-asus-s500sc-310105055w"> คลิก</a></p>
+                    
+					<p class ="textleft"><b>CPU :Intel Core i3-10105 (3.7 GHz Up to 4.4 GHz, 6MB Intel Smart Cache)</b></p>
+                    <p class ="textleft"><b>GPU :Integrated Graphics : Intel UHD Intel 630</b></p>
+                    <p class ="textleft"><b>Memory :4GB DDR4 UDIMM 3200MHz</b></p>
+                    <p class ="textleft"><b>Hard Disk Drive :256GB PCIe NVMe M.2 SSD</b></p>
+                    <img src=https://img.advice.co.th/images_nas/pic_product4/A0144392/A0144392OK_BIG_1.jpg style="max-width:50%;height:auto;"><br>
+                    <br>
+            </div>
+        </div>
+        
+        <div class ="Boxmodel" >
+			<div class = "content">
+				
+				<h4 class="textleft">3.Desktop Lenovo IdeaCentre 5 14IAB7 (90T3005LTA)</h4>
+                    <p class ="textleft"><b>ราคา : 16,900</b></p>
+                    <p class ="textleft"><b>หากสนใจ </b><a class = "taga" href="https://www.advice.co.th/product/desktop-pc/desktop-pc-lenovo/desktop-lenovo-ideacentre-5-14iab7-90t3005lta-"> คลิก</a></p>
+                    
+					<p class ="textleft"><b>Intel Core i3-12100 (3.3GHz up to 4.3GHz, 12MB Intel Smart Cache)</b></p>
+                    <p class ="textleft"><b>GPU : Intel UHD Graphics 730</b></p>
+                    <p class ="textleft"><b>Memory :8GB (1x8GB) DDR4 UDIMM 3200MHz</b></p>
+                    <p class ="textleft"><b>Hard Disk Drive :	
+                        256GB PCIe NVMe M.2 2280 SSD</b></p>
+                    <img src="https://img.advice.co.th/images_nas/pic_product4/A0145445/A0145445OK_BIG_1.jpg" style="max-width:50%;height:auto;"><br>
+                    <br>
+            </div>
+        </div>
+        <div class ="Boxmodel" >
+			<div class = "content">
+				
+				<h4 class="textleft">4.Desktop HP Pavilion TP01-1008d</h4>
+                    <p class ="textleft"><b>ราคา : 14,490</b></p>
+                    <p class ="textleft"><b>หากสนใจ </b><a class = "taga" href="https://www.advice.co.th/product/desktop-pc/desktop-pc-hp/desktop-hp-pavilion-tp01-1008d-4c9r1pa-akl-"> คลิก</a></p>
+                    
+					<p class ="textleft"><b>CPU :AMD Ryzen 3 4300G (3.8GHz up to 4.0GHz, 2MB L2 / 4MB L3 Cache)</b></p>
+                    <p class ="textleft"><b>GPU :AMD Radeon RX 550 (2GB DDR5)</b></p>
+                    <p class ="textleft"><b>Memory :4GB (1x4GB) DDR4 3200MHz UDIMM</b></p>
+                    <p class ="textleft"><b>Hard Disk Drive :1TB SATA 7200rpm HDD</b></p>
+                    <img src="https://img.advice.co.th/images_nas/pic_product4/A0136481/A0136481OK_BIG_1.jpg" style="max-width:50%;height:auto;"><br>
+                    <br>
+            </div>
+        </div>
+        <div class ="Boxmodel" >
+			<div class = "content">
+				
+				<h4 class="textleft">5.Desktop HP Pro 280 G8 MT</h4>
+                    <p class ="textleft"><b>ราคา : 17,490</b></p>
+                    <p class ="textleft"><b>หากสนใจ </b><a class = "taga" href="https://www.advice.co.th/product/desktop-pc/desktop-pc-hp/desktop-hp-pro-280-g8-mt-5c142pa-akl-"> คลิก</a></p>
+                    
+					<p class ="textleft"><b>CPU :Intel Core i5-10505 (3.2GHz Up to 4.6GHz, 12MB Intel Smart Cache)</b></p>
+                    <p class ="textleft"><b>GPU :Integrated Graphics : Intel UHD Graphics 630</b></p>
+                    <p class ="textleft"><b>Memory :8GB (1x8GB) DDR4 2933 DIMM Memory</b></p>
+                    <p class ="textleft"><b>Hard Disk Drive :1TB 3.5 inch 7200rpm SATA Hard Disk Drive</b></p>
+                    <img src="https://img.advice.co.th/images_nas/pic_product4/A0145162/A0145162OK_BIG_1.jpg" style="max-width:50%;height:auto;"><br>
+                    <br>
+            </div>
+        </div>                      
+	</center>
+	<! ========== BLOG POSTS ==================================================================================================== 
+	=============================================================================================================================>    
+	
+  
+  </body>
+</html>
